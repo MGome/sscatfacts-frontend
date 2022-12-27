@@ -1,4 +1,10 @@
 <div class='landing-container'>
   <h1 class='text-center font-weight-bold'>Bienvenid@ a SSCatFact!</h1>
   <h5 class='text-center'>Acá podrás encontrar tus catFacts favoritos</h5>
+  <div class='row justify-content-center'>
+    <%= link_to 'Registrarse', new_user_path, class: 'btn btn-success mb-1' %>
+  </div>
+  <div class='row justify-content-center'>
+    <%= link_to 'Iniciar sesión', login_path, class: 'btn btn-primary' %>
+  </div>
 </div>
