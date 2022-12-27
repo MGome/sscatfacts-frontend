@@ -1,0 +1,14 @@
+<div class='container-fluid d-flex justify-content-center'>
+  <div class='login-card'>
+    <div class='col'>
+      <h3 class='text-center'>Iniciar sesión</h3>
+      <%= form_tag login_path do %>
+        <div class='form-group'>
+          Username:
+          <%= text_field_tag :username, '', class: 'form-control' %>
+        </div>
+        <input type='submit' value='Ingresar' class='btn btn-success w-100'/>
+      <% end %>
+    </div>
+  </div>
+</div>
