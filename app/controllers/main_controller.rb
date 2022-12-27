@@ -6,7 +6,8 @@ class MainController < ApplicationController
   
   def index
     @user = current_user
-    response = HTTParty.get("#{ENV['BACKEND_URL']}/cat_fact")
+    @get_fact_url = "#{ENV['BACKEND_URL']}/cat_fact"
+    response = HTTParty.get(@get_fact_url)
     @fact = response['body']['fact']
   end
 end
