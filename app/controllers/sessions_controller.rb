@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     redirect_to login_path unless @user
 
     session[:user_id] = @user.id
-    return redirect_to root_path
+    redirect_to root_path
   end
 
   def destroy
