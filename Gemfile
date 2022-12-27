@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Manually added
 gem 'bootstrap', '~> 4.0.0'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'httparty', '~> 0.13.7'
 gem 'jquery-rails'
 gem 'rubocop-rails', require: false
