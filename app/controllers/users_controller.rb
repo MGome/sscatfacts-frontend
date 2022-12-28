@@ -3,15 +3,16 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @errors = params[:errors]
   end
 
   def create
     response = HTTParty.post("#{ENV['BACKEND_URL']}/create_user", query: { 'username': user_params[:username] })
-    if response['body']['errors'].blank?
+    if response['errors'].blank?
       session[:user_credentials] = response['body']
       redirect_to logged_index_path
     else
-      redirect_to new_user_path
+      redirect_to new_user_path(errors: response['errors'])
     end
   end
 
