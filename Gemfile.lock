@@ -191,6 +191,8 @@ GEM
       activesupport
       rack (>= 1.1)
       rubocop (>= 0.72.0)
+    rubocop-rspec (1.38.1)
+      rubocop (>= 0.68.1)
     ruby-progressbar (1.11.0)
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
@@ -261,7 +263,9 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.6)
-  rubocop-rails
+  rubocop (~> 0.81.0)
+  rubocop-rails (~> 2.5.2)
+  rubocop-rspec (~> 1.38.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

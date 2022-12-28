@@ -32,7 +32,9 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'httparty', '~> 0.13.7'
 gem 'jquery-rails'
-gem 'rubocop-rails', require: false
+gem 'rubocop',       '~> 0.81.0'
+gem 'rubocop-rails', '~> 2.5.2'
+gem 'rubocop-rspec', '~> 1.38.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
