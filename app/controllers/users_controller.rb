@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def my_cat_facts
+    response = HTTParty.get("#{ENV['BACKEND_URL']}/liked_cat_facts/#{current_user.id}")
+    @liked_facts = response['body']
+  end
+
   private
 
   def user_params
