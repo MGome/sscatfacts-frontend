@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     response = HTTParty.get("#{ENV['BACKEND_URL']}/find_user", query: { 'username': params[:username] })
-    return redirect_to login_path unless response['errors'].blank?
+    return redirect_to login_path if response['errors'].present?
 
     session[:user_credentials] = response['body']
     redirect_to logged_index_path
