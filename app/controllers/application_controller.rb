@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def current_user
-    User.find(session[:user_id]) if session[:user_id]
+    ActiveSupport::JSON.decode(session[:user_credentials]) if session[:user_credentials]
   end
 
   def authenticated_user?
