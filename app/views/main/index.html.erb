@@ -14,7 +14,7 @@
 <div class='d-flex justify-content-center'>
   <div class='col-2'>
     <div class='row justify-content-between'>
-      <%= link_to 'Me gusta', 'javascript:void(0);', class: 'btn btn-success', onclick: 'likeCatFact(this);', data: { like_fact_url: @like_fact_url } %>
+      <%= link_to 'Me gusta', 'javascript:void(0);', id: 'nn-like-fact-btn', class: "btn btn-success #{ 'disabled' if @liked_fact}", onclick: 'likeCatFact(this);', data: { like_fact_url: @like_fact_url } %>
       <%= link_to 'Siguiente', 'javascript:void(0);', id: 'nn-change-fact-btn', class: 'btn btn-primary', onclick: 'changeCatFact(this);', data: { get_fact_url: @get_fact_url } %>
     </div>
   </div>
