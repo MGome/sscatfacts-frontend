@@ -2,6 +2,7 @@
   <h1 class='text-center font-weight-bold'>Bienvenid@ a SSCatFact! <%= @user.username %></h1>
   <h5 class='text-center'>A continuación te presentaremos algunos catFacts aleatorios :3</h5>
   <div class='row justify-content-center'>
+    <%= link_to 'Mis catFacts favoritos', my_cat_facts_users_path, class: 'btn btn-success' %>
     <%= link_to 'Cerrar sesión', logout_path, class: 'btn btn-danger' %>
   </div>
 </div>
