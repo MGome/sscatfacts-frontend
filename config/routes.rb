@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
   end
   get 'index', to: 'main#index', as: 'logged_index'
+  get 'most_popular', to: 'main#most_popular', as: 'popular_facts'
 
   # Session routes
   get 'login', to: 'sessions#new'
