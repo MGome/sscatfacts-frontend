@@ -1,5 +1,5 @@
 <div class='landing-container'>
-  <h1 class='text-center font-weight-bold'>Bienvenid@ a SSCatFact! <%= @user.username %></h1>
+  <h1 class='text-center font-weight-bold'>Bienvenid@ a SSCatFact! <%= @username %></h1>
   <h5 class='text-center'>A continuación te presentaremos algunos catFacts aleatorios :3</h5>
   <div class='row justify-content-center'>
     <%= link_to 'Mis catFacts favoritos', my_cat_facts_users_path, class: 'btn btn-success' %>
@@ -9,7 +9,7 @@
 </div>
 <div class='container-fluid d-flex justify-content-center mt-2'>
   <div class='login-card nn-cat-fact-container'>
-    <h2 data-fact-id="<%= @fact_id %>" data-user-id="<%= @user.id %>"><%= @fact %></h5>
+    <h2 data-fact-id="<%= @fact_id %>" data-user-id="<%= @user_id %>"><%= @fact %></h5>
   </div>
 </div>
 <div class='d-flex justify-content-center'>
