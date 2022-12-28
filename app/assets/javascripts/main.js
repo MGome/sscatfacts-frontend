@@ -8,6 +8,11 @@ function changeCatFact(elem) {
       const factBody = $('.nn-cat-fact-container').find('h2');
       factBody.html(data['body']['fact']);
       factBody.data('factId', data['body']['fact_id']);
+      if (data['body']['liked_fact']) {
+        $('#nn-like-fact-btn').addClass('disabled');
+      } else if ($('#nn-like-fact-btn').hasClass('disabled')) {
+        $('#nn-like-fact-btn').removeClass('disabled');
+      }
     },
   });
 }
