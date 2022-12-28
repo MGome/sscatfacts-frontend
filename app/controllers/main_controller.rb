@@ -9,5 +9,7 @@ class MainController < ApplicationController
     @get_fact_url = "#{ENV['BACKEND_URL']}/cat_fact"
     response = HTTParty.get(@get_fact_url)
     @fact = response['body']['fact']
+    @fact_id = response['body']['fact_id']
+    @like_fact_url = "#{ENV['BACKEND_URL']}/like_cat_fact"
   end
 end

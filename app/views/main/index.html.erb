@@ -7,10 +7,15 @@
 </div>
 <div class='container-fluid d-flex justify-content-center mt-2'>
   <div class='login-card nn-cat-fact-container'>
-    <h2><%= @fact %></h5>
+    <h2 data-fact-id="<%= @fact_id %>" data-user-id="<%= @user.id %>"><%= @fact %></h5>
   </div>
 </div>
 <div class='d-flex justify-content-center'>
-  <%= link_to 'Siguiente', 'javascript:void(0);', class: 'btn btn-primary', onclick: 'changeCatFact(this);', data: { get_fact_url: @get_fact_url } %>
+  <div class='col-2'>
+    <div class='row justify-content-between'>
+      <%= link_to 'Me gusta', 'javascript:void(0);', class: 'btn btn-success', onclick: 'likeCatFact(this);', data: { like_fact_url: @like_fact_url } %>
+      <%= link_to 'Siguiente', 'javascript:void(0);', id: 'nn-change-fact-btn', class: 'btn btn-primary', onclick: 'changeCatFact(this);', data: { get_fact_url: @get_fact_url } %>
+    </div>
+  </div>
 </div>
 
