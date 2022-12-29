@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FrontendEscalona</title>
+    <title>SSCatFacts</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,34 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light sscat-nav <%= 'd-none' if should_hide_navbar(params) %>">
+      <a class="navbar-brand" href="#"><b>SS</b>CatFacts</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= 'active' if active_for_index(params) %>">
+            <a class="nav-link" href="<%= logged_index_path %>">Inicio</a>
+          </li>
+          <li class="nav-item <%= 'active' if active_for_most_popular(params) %>">
+            <a class="nav-link" href="<%= popular_facts_path %>">Top 10 Cat Facts</a>
+          </li>
+          <li class="nav-item <%= 'active' if active_for_my_likes(params) %>">
+            <a class="nav-link" href="<%= my_cat_facts_users_path %>">Mis Cat Facts favoritos</a>
+          </li>
+        </ul>
+        <div class="nav-item dropdown dropdown-menu-right navbar-margin-right">
+          <a class="nav-link dropdown-toggle text-dark pl-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @username %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= logout_path %>">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

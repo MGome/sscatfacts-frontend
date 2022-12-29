@@ -1,0 +1,18 @@
+<div class='container-fluid'>
+  <div class='d-flex justify-content-center mt-2'>
+    <div class='d-flex flex-column'>
+      <div class='container-card catfact-card nn-cat-fact-container'>
+        <h2 data-fact-id="<%= @fact_id %>" data-user-id="<%= @user_id %>"><%= @fact %></h5>
+      </div>
+      <div class='row justify-content-between mt-2'>
+        <div class='col-6'>
+        <%= link_to 'Me gusta', 'javascript:void(0);', id: 'nn-like-fact-btn', class: "btn btn-success w-100 #{ 'disabled' if @liked_fact}", onclick: 'likeCatFact(this);', data: { like_fact_url: @like_fact_url } %>
+        </div>
+        <div class='d-flex flex-column align-items-end col-6'>
+        <%= link_to 'Siguiente', 'javascript:void(0);', id: 'nn-change-fact-btn', class: 'btn btn-primary w-100', onclick: 'changeCatFact(this);', data: { get_fact_url: @get_fact_url } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

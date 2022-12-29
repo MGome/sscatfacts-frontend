@@ -29,9 +29,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Manually added
 gem 'bootstrap', '~> 4.0.0'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'httparty', '~> 0.13.7'
 gem 'jquery-rails'
-gem 'rubocop-rails', require: false
+gem 'rubocop',       '~> 0.81.0'
+gem 'rubocop-rails', '~> 2.5.2'
+gem 'rubocop-rspec', '~> 1.38.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -45,6 +48,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 group :development do

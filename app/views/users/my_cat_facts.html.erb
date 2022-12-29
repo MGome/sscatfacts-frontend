@@ -1,0 +1,7 @@
+<div class='col-12 offset-0 col-lg-6 offset-lg-3 mt-2'>
+  <% @liked_facts.each do |fact| %>
+    <div class='base-card mb-2'>
+      <p><%= fact['description'] %></p>
+    </div>
+  <% end %>
+</div>
