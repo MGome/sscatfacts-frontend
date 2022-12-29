@@ -8,9 +8,7 @@ class MainController < ApplicationController
   def index
     @get_fact_url = "#{ENV['BACKEND_URL']}/cat_fact?user_id=#{@user_id}"
     response = HTTParty.get(@get_fact_url)
-    @fact = response['body']['fact']
-    @fact_id = response['body']['fact_id']
-    @liked_fact = response['body']['liked_fact']
+    @fact, @fact_id, @liked_fact = response['body'].values_at('fact', 'fact_id', 'liked_fact')
     @like_fact_url = "#{ENV['BACKEND_URL']}/like_cat_fact"
   end
 
