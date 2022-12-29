@@ -8,10 +8,10 @@
             <div class='d-flex flex-column h-100'>
               <h2 class='text-center mt-4'>Crear usuario</h3>
               <div class='row justify-content-center mb-4 mx-2 h-100'>
-                <%= form_for(@user, html: { class: 'd-flex flex-column w-100' }) do |user| %>
+                <%= form_tag(users_path, class: 'd-flex flex-column w-100' ) do %>
                   <div class='form-group mt-4 <%= 'mb-0' if @errors.present? %>'>
                     Username:
-                    <%= user.text_field :username, class: 'form-control' %>
+                    <%= text_field_tag :username, '', class: 'form-control' %>
                   </div>
                   <% if @errors.present? %>
                     <p class='text-danger'><%= @errors %></p>
