@@ -1,11 +1,11 @@
 class MainController < ApplicationController
   before_action :verify_user_authentication, only: %i[index most_popular]
+  before_action :set_user_information, only: %i[index most_popular]
 
   def home
   end
 
   def index
-    @user_id, @username = current_user.values_at('id', 'username')
     @get_fact_url = "#{ENV['BACKEND_URL']}/cat_fact?user_id=#{@user_id}"
     response = HTTParty.get(@get_fact_url)
     @fact = response['body']['fact']
