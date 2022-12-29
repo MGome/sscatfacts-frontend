@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def verify_user_authentication
     return redirect_to login_path unless authenticated_user?
   end
+
+  def set_user_information
+    @user_id, @username = current_user.values_at('id', 'username')
+  end
 end

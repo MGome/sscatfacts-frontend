@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include HTTParty
+  before_action :set_user_information, only: %i[my_cat_facts]
 
   def new
     @user = User.new
