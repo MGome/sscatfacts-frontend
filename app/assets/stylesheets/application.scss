@@ -31,8 +31,10 @@
 .container-card {
   @extend .base-card;
 
-  height: 50vh;
   width: 50vh;
+  &.catfact-card {
+    min-height: 50vh;
+  }
   &.landing-card {
     height: 30vh;
     width: 30vh;
