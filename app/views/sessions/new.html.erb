@@ -1,17 +1,28 @@
-<div class='container-fluid d-flex justify-content-center'>
-  <div class='login-card'>
-    <div class='col'>
-      <h3 class='text-center'>Iniciar sesión</h3>
-      <%= form_tag login_path do %>
-        <div class='form-group <%= 'mb-0' if @errors.present? %>'>
-          Username:
-          <%= text_field_tag :username, '', class: 'form-control' %>
+<div class='container-fluid m-0 p-0'>
+  <div class='landing-container'>
+    <div class='row layout-row'>
+      <%= render '/main/landing_label' %>
+      <div class='col-4 offset-3'>
+        <div class='d-flex justify-content-center'>
+          <div class='login-card landing-card'>
+            <div class='d-flex flex-column h-100'>
+              <h2 class='text-center mt-4'>Iniciar sesión</h3>
+              <div class='row justify-content-center mb-4 mx-2 h-100'>
+                <%= form_tag(login_path, class: 'd-flex flex-column w-100') do %>
+                  <div class='form-group mt-4 <%= 'mb-0' if @errors.present? %>'>
+                    Username:
+                    <%= text_field_tag :username, '', class: 'form-control' %>
+                  </div>
+                  <% if @errors.present? %>
+                    <p class='text-danger'><%= @errors %></p>
+                  <% end %>
+                  <input type='submit' value='Ingresar' class='btn btn-success w-100 mt-auto'/>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
-        <% if @errors.present? %>
-          <p class='text-danger'><%= @errors %></p>
-        <% end %>
-        <input type='submit' value='Ingresar' class='btn btn-success w-100'/>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
