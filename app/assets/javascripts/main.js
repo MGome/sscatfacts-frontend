@@ -3,7 +3,7 @@ function changeCatFact(elem) {
   $.ajax({
     type: 'GET',
     dataType: 'json',
-    url: $(elem).data('getFactUrl'),
+    url: $(elem).data('getFactUrl').replace('api', 'localhost'),
     crossDomain: true,
     success: (data) => {
       const factBody = $('.nn-cat-fact-container').find('h2');
@@ -27,7 +27,7 @@ function likeCatFact(elem) {
   $.ajax({
     type: 'POST',
     dataType: 'json',
-    url: `${$(elem).data('likeFactUrl')}?user_id=${userId}&fact_id=${factId}`,
+    url: `${$(elem).data('likeFactUrl').replace('api', 'localhost')}?user_id=${userId}&fact_id=${factId}`,
     crossDomain: true,
     success: () => {
       changeCatFact('#nn-change-fact-btn');
